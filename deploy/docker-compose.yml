@@ -1,7 +1,21 @@
 services:
+  base:
+    build:
+      context: /home/renzo/HLC/devops/docker/ModuloUsuarios
+      dockerfile: ./dockerfile/base/Dockerfile
+    container_name: moduloUsuarioctr
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_PASSWORD=admin
+      - DB_NAME=bdusuarios
+    depends_on:
+      - db
+    ports:
+     - "3000:3000"
   db:
     image: postgres:15
-    container_name: ModUsuariosContainer
+    container_name: dbpostgres15
     restart: always
     environment:
       POSTGRES_USER: admin

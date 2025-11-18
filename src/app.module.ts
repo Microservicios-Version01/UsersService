@@ -13,10 +13,6 @@ import { PerfilesModule } from './modules/perfiles/perfiles.module';
 
 @Module({
   imports: [
-    UsuarioModule,
-    RolesModule,
-    PermisosModule,
-    PerfilesModule,
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'postgres',
@@ -28,6 +24,10 @@ import { PerfilesModule } from './modules/perfiles/perfiles.module';
       autoLoadEntities: true,
       synchronize: true,
     }),
+    UsuarioModule,
+    RolesModule,
+    PermisosModule,
+    PerfilesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
