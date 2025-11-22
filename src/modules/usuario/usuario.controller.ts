@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Put, Delete, Param, Body, ParseIntPipe } from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
+import { CrearUsuariodto } from './dto/create-usuario.dto';
 
 @Controller('usuario')
 export class UsuarioController {
@@ -21,9 +22,9 @@ export class UsuarioController {
     // OJO: return en el post
     /* Se le puede retornar datos al cliente (con un return), 
      si es que se quiere confirmar de la creacion,actualizacion, etc del dato */
-    //CHECK: insertar Dto
     @Post()
-    createUsuario(@Body() usuarioDto: any) {
+    createUsuario(@Body() usuarioDto: CrearUsuariodto) {
+        return usuarioDto;
     }
 
     //CHECK: insertar Dto

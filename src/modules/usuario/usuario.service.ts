@@ -14,7 +14,6 @@ export class UsuarioService {
   constructor (
     @InjectRepository(Usuario)
     private readonly usuarioRepository: Repository<Usuario>,
-
     private readonly perfilService: PerfilesService,
     private readonly rolService: RolesService,
     private readonly permisoService: PermisosService
@@ -45,7 +44,7 @@ export class UsuarioService {
     const perfil = await this.perfilService.findOne(usuarioDTO.perfil);
   }
 
-  // TODO:
+  // TODO 
   async update(){}
 
   async delete(id: string){

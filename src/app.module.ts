@@ -3,9 +3,6 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-
 import { UsuarioModule } from './modules/usuario/usuario.module';
 import { RolesModule } from './modules/roles/roles.module';
 import { PermisosModule } from './modules/permisos/permisos.module';
@@ -29,8 +26,8 @@ import { PerfilesModule } from './modules/perfiles/perfiles.module';
     PermisosModule,
     PerfilesModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {
   constructor(private readonly configService: ConfigService) {}
